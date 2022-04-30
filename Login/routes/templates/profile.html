@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block tittle %}Profile{% endblock %}
+
+{% block stylesCSS %}
+<link rel="stylesheet" href="{{ url_for('static', filename = 'login.css' ) }}">
+<link rel="stylesheet" href="{{ url_for('static', filename = 'profile.css' ) }}">
+{% endblock %}
+
+{% block header_tittle %}Bienvenido{% endblock %}
+
+{% block body %}
+<section class="Dashboard">
+    <section class=" Dashboard__container">
+        <div class="Dashboard__container--cart-background"></div>
+        <section class="Dashboard__container--dates">
+            <section class="Dashboard__container--cart">
+                <div class="Dashboard__container--cart-photo"></div>
+                <section class="Dashboard__container--texts">
+                    <div class="Dashboard__container--texts-name"> {{nombre}} </div>
+                    <div class="Dashboard__container--texts-age"> {{edad}} años </div>
+                    <div class="Dashboard__container--texts-occupation"> {{ocupacion}} </div>
+                </section>
+            </section>
+            <section class="Dashboard__container--info">
+                <div class="Dashboard__container--info-email"> Email: {{correo}} </div>
+                <div class="Dashboard__container--info-address"> Dirección: {{direccion}} </div>
+                <div class="Dashboard__container--info-birth"> Nacimiento: {{fecha_nacimiento}} </div>
+                <div class="Dashboard__container--info-password"> Contraseña: {{contrasena}} </div>            
+            </section>
+        </section>
+    </section>
+</section>
+{% endblock %}

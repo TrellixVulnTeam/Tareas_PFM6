@@ -1,3 +1,15 @@
+:root
+{
+    --baseColor: #311B92;
+    --AColor: #120645;
+    --BColor: #5B3EDE;
+    --Dcolor: #453D00;
+    --Ecolor: #91841A;
+    --letterColor: #ffffff;
+    --letterColorB: #000000;
+    --white: #ffffff;
+}
+
 body
 {
     margin: 0;
@@ -15,30 +27,32 @@ body
     align-items: center;
     width: 100%;
     height: 150px;
+    background-color: var(--AColor);
 }
 .header__box h1
 {
     font-size: 60px;
+    color: var(--letterColor);
 }
 
 .formulario
 {
-    background-color: #0080ff;
+    background-color: var(--baseColor);
     display: flex;
     justify-content: center;
 }
 
 .formulario__container
 {
-    background-color: white;
+    background-color: var(--BColor);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 2px solid rgb(187, 187, 187);
+    border: 2px solid rgba(187, 187, 187, 0.432);
     border-radius: 10px;
     margin: 75px auto 75px;
     padding: 0px 30px 10px;
-    color: black;
+    color: var(--letterColorB);
 }
 
 .formulario__container--form
@@ -52,47 +66,70 @@ body
 {
     margin-bottom: 10px;
     padding: 0px 16px;
-    border: 1px solid #0080ff;
+    border: 1px solid var(--baseColor);
     border-radius: 10px;
     height: 30px;
     font-size: 16px;
-    font-family: "Roboto Mono",monospace;
+}
+
+.formulario__container--form-date
+{
+    padding: 4px 0px 27px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 input[type="date"]{
-    background-color: #0080ff;
-    padding: 15px;
-    color: #ffffff;
+    background-color: var(--baseColor);
+    padding: 18px 10px 7px;
+    color: var(--letterColor);
     border: none;
     outline: none;
     border-radius: 5px;
+    margin: 0px 0px 4px;
 }
 
 ::-webkit-calendar-picker-indicator{
-    background-color: #ffffff;
+    background-color: var(--letterColor);
     padding: 5px;
+    margin-bottom: 7px;
     cursor: pointer;
     border-radius: 3px;
 }
 
+.formulario__container--form-date p
+{
+    color: var(--letterColor);
+    margin: -52px 14px 4px;
+}
+
 .button
 {
-    border: 1px solid black;
+    border: 1px solid var(--Ecolor);
     border-radius: 5px;
-    margin: 20px 0px 5px;
+    margin: 20px 0px 20px;
+    padding: 18px 0px;
     cursor: pointer;
     font-weight: bold;
     letter-spacing: 0.5px;
     font-size: 13px;
     height: 25px;
     outline: none;
+    background-color: var(--Ecolor);
+    
 }
 
-.button a
+.button p
 {
-    color: black;
+    margin: -6px 0px 0px 0px;
+    color: var(--letterColor);
+    font-size: 12px;
 }
 
-.button a:hover, .login__container--remember-me a:hover {
+.button p:hover
+{
     text-decoration: underline;
 }

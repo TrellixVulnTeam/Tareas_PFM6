@@ -1,37 +1,30 @@
-<!DOCTYPE html>
-<html>
+{% extends "layout.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>form</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'login.css' ) }}">
-</head>
+{% block tittle %}Form{% endblock %}
 
-<body>
-    <head class="header">
-        <div class="header__box">
-            <h1>Formulario</h1>
-        </div>
-    </head>
+{% block stylesCSS %}
+<link rel="stylesheet" href="{{ url_for('static', filename = 'login.css' ) }}">
+{% endblock %}
 
-    <section class="formulario">
-        <section class = "formulario__container">
-            <h2>Datos</h2>
-            <form class="formulario__container--form">
-                <input class="input" type="text" name="nombre" placeholder="nombre" required="">
-                <input class="input" type="password" name="contraseña" placeholder="contraseña" required="">
-                <input class="input" type="email" name="correo" placeholder="correo" required="">
-                <input class="input" type="text" name="direccion" placeholder="direccion" required="">
-                <input class="input" type="text" name="ocupación" placeholder="ocupación" required="">
-                <input class="input" type="text" name="edad" placeholder="edad" required="">                
+{% block header_tittle %}Formulario{% endblock %}
+
+{% block body %}
+<section class="formulario">
+    <section class = "formulario__container">
+        <h2>Datos</h2>
+        <form class="formulario__container--form" action="/profile" method="post">
+            <input class="input" type="text" name="nombre" placeholder="nombre" required="">
+            <input class="input" type="password" name="contrasena" placeholder="contraseña" required="">
+            <input class="input" type="email" name="correo" placeholder="correo" required="">
+            <input class="input" type="text" name="direccion" placeholder="direccion" required="">
+            <input class="input" type="text" name="ocupacion" placeholder="ocupación" required="">
+            <input class="input" type="text" name="edad" placeholder="edad" required="">                
+            <div class=formulario__container--form-date>
                 <input class="input" type="date" name="fecha_nacimiento" required="">
-
-                <button class="button" type="submit"><a href="#">Aceptar Cambios</a></button>
-            </form>
-        </section>
+                <p>fecha de nacimiento</p>
+            </div>    
+            <button class="button" type="submit"><p>Aceptar Cambios<p></button>
+        </form>
     </section>
-</body>
-
-</html>
+</section>
+{% endblock %}
