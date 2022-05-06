@@ -1,0 +1,241 @@
+<!-- 
+    Alumno: 
+        Alexander Rafael Murillo Castillo
+    Curso: 
+        Desarrollo Basado en Plataformas
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script>
+        function printL()
+        {
+            let x = 1;
+            if (x === 1)
+            {
+                let x = 2;
+                document.querySelector('#printL1').innerHTML = ">  " + (x);
+            }
+            document.querySelector('#printL2').innerHTML = ">  " + (x);
+        }
+
+        function printV()
+        {
+            var x = 1;
+            if (x === 1)
+            {
+                var x = 2;
+                document.querySelector('#printV1').innerHTML = ">  " + (x);
+            }
+            document.querySelector('#printV2').innerHTML = ">  " + (x);
+        }
+
+        function printC()
+        {
+            const x = 1;
+            if (x === 1)
+            {
+                try{
+                    x = 2;
+                }
+                catch (error)
+                {
+                    document.querySelector('#printC1').innerHTML = ">  " + (error);
+                }
+            }
+            document.querySelector('#printC2').innerHTML = ">  " + (x);
+        }
+
+    </script>
+    <title>LetVarConst</title>
+</head>
+
+<style>
+    :root
+    {
+        --baseColor: #4E177B;
+        --AColor: #480B7A;
+        --BColor: #7A4123;
+        --Dcolor: #727A0B;
+        --Ecolor: #117A75;
+        --letterColorA: #ffffff;
+        --letterColorB: #000000;
+        --white: #ffffff;
+    }
+
+    body
+    {
+        margin: 0;
+        background-color: var(--baseColor);
+    }
+    .container
+    {
+        width: 100%;
+        height: 100%;
+        color: var(--letterColorA);
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .container__let, .container__var, .container__const
+    {
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        width: 300px;
+        background-color: var(--AColor);
+        margin: 10px;
+        border: 5px solid var(--Ecolor);
+        border-radius: 10px;
+        padding: 20px;
+    }
+    h1
+    {
+        text-transform: uppercase;
+        text-align: center;
+        border-bottom: 4px solid var(--BColor);
+    }
+
+    .container__code
+    {
+        border-radius: 5px;
+        border: 1px solid var(--Dcolor);
+        border-left:4px solid var(--Dcolor) ;
+        padding: 10px;
+        font-size: 15px;
+        color: var(--letterColorB);
+        background-color: #f2f1f1;
+    }
+    .code--2
+    {
+        margin-left: 20px;
+    }
+    .code--3
+    {
+        margin-left: 40px;
+    }
+
+    .container__code--run
+    {
+        border-radius: 1px;
+        height: 40px;
+        border: 1px solid var(--Dcolor);
+        padding: 10px;
+        font-size: 12px;
+        color: var(--letterColorB);
+        background-color: #f2f1f1;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    .button
+    {
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 14px;
+        margin: 10px;
+        padding: 10px;
+        border: 2px solid var(--Ecolor);
+    }
+    .button:hover 
+    {
+        cursor: pointer;
+        border: 2px solid var(--BColor);
+    }
+    .button:active
+    {
+        border-radius: 2px solid var(--Dcolor); 
+        color: var(--letterColorA);
+        background-color: #f2f1f1c7;
+    }
+
+</style>
+
+<body>
+    <section class="container">     
+        <section class="container__let">
+            <h1>Let</h1>
+            <p>Al declarar "let" este funciona solo como una variable local</p>
+            <section class="container__let--example">
+                <div>let valor</div>
+                <div class="container__code">
+                    <code>
+                        <div class="code--1">let x = 1;</div>
+                        <div class="code--1">if (x === 1) {</div>
+                        <div class="code--2">let x = 2;</div>
+                        <div class="code--2">console.log(x);</div>
+                        <div class="code--2">// ouput: 2</div>
+                        <div class="code--1">}</div>
+                        <div class="code--1">console.log(x);</div>
+                        <div>// ouput: 1</div>
+                    </code>
+                </div>
+                <button class="button" id="buttonLet" onclick="printL()"> Clik to run </button>
+                <section class="container__code--run">
+                    <div class="ouput">output:</div> 
+                    <div id="printL1" > </div> 
+                    <div id="printL2" > </div> 
+                </section>
+            </section>
+
+        </section>
+        
+        <section class="container__var">
+            <h1>Var</h1>
+            <p>Al declarar "var" este funciona como una variable global</p>
+            <section class="container__var--example">
+                <div>var valor</div>
+                <div class="container__code">
+                    <code>
+                        <div class="code--1">var x = 1;</div>
+                        <div class="code--1">if (x === 1) {</div>
+                        <div class="code--2">var x = 2;</div>
+                        <div class="code--2">console.log(x);</div>
+                        <div class="code--2">// ouput: 2</div>
+                        <div class="code--1">}</div>
+                        <div class="code--1">console.log(x);</div>
+                        <div>// ouput: 2</div>
+                    </code>
+                </div>
+                <button class="button" id="buttonVar" onclick="printV()"> Clik to run </button>
+                <section class="container__code--run">
+                    <div class="ouput">output:</div> 
+                    <div id="printV1" > </div> 
+                    <div id="printV2" > </div> 
+                </section>
+            </section>
+        </section>
+        
+        <section class="container__const">
+            <h1>Const</h1>
+            <p>Al declarar "const" funciona como una variable que no puede cambiar y no puede ser redeclarado</p>
+            <section class="container__const--example">
+                <div>const valor</div>
+                <div class="container__code">
+                    <code>
+                        <div class="code--1">const x = 1;</div>
+                        <div class="code--1">if (x === 1) {</div>
+                        <div class="code--2">try {</div>
+                        <div class="code--3">x = 2;</div>
+                        <div class="code--2">}</div>
+                        <div class="code--2">catch (error) {</div>
+                        <div class="code--3">console.log(error);</div>
+                        <div class="code--3">// ouput: TypeError: invalid assignment to const `X'</div>
+                        <div class="code--2">}</div>
+                        <div class="code--1">}</div>
+                        <div class="code--1">console.log(x);</div>
+                        <div>// ouput: 1</div>
+                    </code>
+                </div>
+                <button class="button" id="buttonConst" onclick="printC()"> Clik to run </button>
+                <section class="container__code--run">
+                    <div class="ouput">output:</div>
+                    <div id="printC1" > </div> 
+                    <div id="printC2" > </div> 
+                </section>
+            </section>
+        </section>
+    </section>
+        
+    
+</body>
+</html>
